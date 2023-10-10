@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2 style="text-align: center; margin-bottom: 20px">Bảng danh sách sở thích</h2>
+
+
+    <form style="border: 1px solid;  width: 300px; height: 300px; text-align: center; position: relative; left: 460px; margin-bottom: 10px">
+        <div style="padding: 50px 0" id="color">
+            <input type="checkbox" name="sport" value="game"/>Game
+            <input type="checkbox" name="sport" value="đọc sách"/>Đọc sách
+            <input type="checkbox" name="sport" value="sleep"/>Ngủ
+            <input type="checkbox" name="sport" value="play soccer"/> Đá bóng
+        </div>
+
+        <div style="text-align: center; position: relative; top: 80px">
+            <button type="button" onclick="test()">Submit</button>
+        </div>
+
+
+    </form>
+
+    <div id="result" style="text-align: center">
+    </div>
+
+</div>
+
+
+<script>
+    let result = "";
+
+    function test() {
+
+        let a = document.getElementsByName("sport")
+
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].checked === true) {
+                result += a[i].defaultValue;
+            }
+        }
+
+        document.getElementById("result").innerHTML = result;
+        result = "";
+        clear()
+
+    }
+
+    function clear() {
+
+        let a = document.getElementsByName("sport")
+        for (let i = 0; i < a.length; i++) {
+            if (a[i].checked === true) {
+                a[i].checked = false;
+
+
+            }
+        }
+    }
+</script>
+</body>
+</html>

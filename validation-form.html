@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h2 style="text-align: center; margin-bottom: 20px">Thông tin đăng ký</h2>
+
+
+    <form style="border: 1px solid;  width: 300px; height: 300px; text-align: center; position: relative; left: 460px; margin-bottom: 10px">
+        <input type="text" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" style="margin: 20px 30px">
+        <br/>
+        <input type="email" placeholder="Email" name="email" id="email" style="margin: 20px 30px"> <br/>
+        <input type="password" placeholder="password" name="password" autocomplete="off" id="password" style="margin: 20px 30px"> <br/>
+
+
+        <div style="text-align: center; position: relative; top: 80px">
+            <button type="button" onclick="test()">Submit</button>
+        </div>
+
+
+    </form>
+
+
+</div>
+
+
+<script>
+
+
+    function test() {
+        let password = document.getElementById("password").value;
+        let email = document.getElementById("email")
+        let validRegex = /^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(.[a-zA-Z]+)*$/;
+        if (email.value.match(validRegex)) {
+            alert("Địa chỉ email hợp lệ")
+            if (password.length >= 6) {
+                alert("Mật khẩu hợp lệ")
+            } else {
+                alert("Mật khẩu chưa hợp lệ")
+            }
+        } else {
+            alert("Địa chỉ email không hợp lệ")
+        }
+
+    }
+
+
+</script>
+
+</body>
+</html>

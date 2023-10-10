@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div>
+    <h2 style="text-align: center; margin-bottom: 20px">Bảng màu đăng ký</h2>
+
+
+    <form style="border: 1px solid;  width: 300px; height: 300px; text-align: center; position: relative; left: 460px; margin-bottom: 10px">
+        <div style="padding: 50px 0" id="color">
+            <input name="color" type="radio" value="xanh"/>Xanh
+            <input name="color" type="radio" value="đỏ"/>Đỏ
+            <input name="color" type="radio" value="tím"/>Tím
+            <input name="color" type="radio" value="vàng"/>Vàng
+        </div>
+
+        <div style="text-align: center; position: relative; top: 80px">
+            <button type="button" onclick="test()">Submit</button>
+        </div>
+
+
+    </form>
+
+    <div id="result" style="text-align: center">
+    </div>
+</div>
+<script>
+
+    let result;
+    function test() {
+
+        let a = document.getElementsByName("color")
+        for (let i = 0; i < a.length; i++){
+
+
+            if (a[i].checked === true){
+                result = a[i].defaultValue
+            }
+        }
+
+
+        document.getElementById("result").innerHTML =  result
+
+
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

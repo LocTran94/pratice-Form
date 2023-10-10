@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh sách sản phẩm</h1>
+<ul id="productList" style="list-style: none">
+  <li>
+    <label>
+      <input type="checkbox" class="product" data-price="10"> Sản phẩm 1 - $10
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" class="product" data-price="20"> Sản phẩm 2 - $20
+    </label>
+  </li>
+  <li>
+    <label>
+      <input type="checkbox" class="product" data-price="30"> Sản phẩm 3 - $30
+    </label>
+  </li>
+</ul>
+
+<button type="button" onclick="test()">Check Bill</button>
+<p>Tổng tiền: $<span id="totalPrice">0</span></p>
+
+
+
+<script>
+
+function test() {
+  let total= 0;
+  let a =  document.getElementsByClassName("product")
+  for (let i = 0; i < a.length; i++){
+
+    if (a[i].checked === true){
+      total += a[i].dataset.price*1
+
+    }
+  }
+document.getElementById("totalPrice").innerHTML = total
+}
+
+
+
+</script>
+
+</body>
+</html>
